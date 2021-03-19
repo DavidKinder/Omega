@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{3d7a7894-0efd-4a12-ac03-70ff6ca9f510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{e0bf0941-f73d-4031-a52e-2e8eee2bcfee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Omega">
+      <UniqueIdentifier>{479d8013-1f2c-49b9-a69f-128c0e22e54a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinOmega.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\abyss.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\aux1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\aux2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\aux3.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\char.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\city.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\command1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\command2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\command3.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\compress.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\country.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\effect1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\effect2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\effect3.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\env.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\etc.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\file.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\gen1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\gen2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\guild1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\guild2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\house.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\init.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\inv.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\item.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\itemf1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\itemf2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\itemf3.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\lev.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\mmelee.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\mmove.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\mon.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\move.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\movef.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\mspec.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\mstrike.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\mtalk.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\omega.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\priest.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\save.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\scr.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\site1.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\site2.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\spell.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\time.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\trap.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\util.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+    <ClCompile Include="Omega\village.c">
+      <Filter>Omega</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="curses.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="WinOmega.ico">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="WinOmega.manifest">
+      <Filter>Resources</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WinOmega.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -184,7 +184,7 @@ void initrand(int environment, int level)
     store = RANDFUNCTION;
   /* Pseudo Random Seed */
   if (environment == -1)
-    Seed = (int) time((long *)NULL);
+    Seed = (int) time(NULL);
   else if (environment == -2)
     Seed = store;
   else

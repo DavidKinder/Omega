@@ -12,11 +12,6 @@
 #include <commctrl.h>
 #include <objbase.h>
 #include <shlobj.h>
-#include <shfolder.h>
-
-// Get multiple monitor functions that will work on Windows 95
-#define COMPILE_MULTIMON_STUBS
-#include <MultiMon.h>
 
 extern "C"
 {
@@ -329,9 +324,6 @@ int showDialog(HINSTANCE instance, int resId, HWND parent, DLGPROC proc)
   ::ZeroMemory(&ncm,sizeof ncm);
   ncm.cbSize = sizeof ncm;
   ::SystemParametersInfo(SPI_GETNONCLIENTMETRICS,sizeof ncm,&ncm,0);
-  OSVERSIONINFO osvi;
-  osvi.dwOSVersionInfoSize = sizeof osvi;
-  ::GetVersionEx(&osvi);
   WCHAR fontName[256];
   MultiByteToWideChar(CP_ACP,0,
     ncm.lfMessageFont.lfFaceName,strlen(ncm.lfMessageFont.lfFaceName)+1,fontName,256);
@@ -352,7 +344,7 @@ int showDialog(HINSTANCE instance, int resId, HWND parent, DLGPROC proc)
           BYTE* copyMem = (BYTE*)GlobalLock(copyGlobal);
           if (copyMem != 0)
           {
-            int titleLen = (wcslen(((WORD*)resMem)+15)+1)*sizeof(WCHAR);
+            int titleLen = (wcslen(((WCHAR*)resMem)+15)+1)*sizeof(WCHAR);
             int copy1Size = (18*sizeof(WORD))+titleLen;
             int font1Len = (wcslen((WCHAR*)(resMem+copy1Size))+1)*sizeof(WCHAR);
             int copy2Size = resSize-copy1Size-font1Len;
@@ -361,7 +353,7 @@ int showDialog(HINSTANCE instance, int resId, HWND parent, DLGPROC proc)
             memcpy(copyMem,resMem,copy1Size);
             wcscpy((WCHAR*)(copyMem+copy1Size),fontName);
             memcpy(offsetDWord(copyMem+copy1Size+font2Len),offsetDWord(resMem+copy1Size+font1Len),copy2Size);
-            *((WORD*)(copyMem+copy1Size-(3*sizeof(WORD)))) = (osvi.dwMajorVersion < 6) ? 8 : 9;
+            *((WORD*)(copyMem+copy1Size-(3*sizeof(WORD)))) = 9;
             GlobalUnlock(copyGlobal);
           }
           code = DialogBoxIndirect(instance,(LPDLGTEMPLATE)copyGlobal,parent,proc);
@@ -623,14 +615,8 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int show)
   strcpy(pathLib+1,"OmegaLib\\");
 
   // Create the directory for Omega to store files in
-  HMODULE folderDll = LoadLibrary("shfolder.dll");
-  if (folderDll == 0)
-    fatal("Failed to load shfolder.dll");
-  PFNSHGETFOLDERPATHA getFolderPath = (PFNSHGETFOLDERPATHA)GetProcAddress(folderDll,"SHGetFolderPathA");
-  if (getFolderPath == NULL)
-    fatal("Failed to get SHGetFolderPathA()");
   char omegaDir[_MAX_PATH];
-  if (FAILED((*getFolderPath)(0,CSIDL_APPDATA,0,SHGFP_TYPE_CURRENT,omegaDir)))
+  if (FAILED(SHGetFolderPath(0,CSIDL_APPDATA,0,SHGFP_TYPE_CURRENT,omegaDir)))
     fatal("Failed to get CSIDL_APPDATA path");
   strcat(omegaDir,"\\Omega");
   CreateDirectory(omegaDir,NULL);
