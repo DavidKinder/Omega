@@ -401,6 +401,7 @@ void give()
   int dx,dy,dindex=0;
   struct monster *m;
   pob obj;
+  char id[100];
 
   clearmsg();
 
@@ -431,9 +432,10 @@ void give()
 	obj->used = FALSE;
 	conform_lost_objects(1,Player.possessions[index]);
 	obj->number = 1;
+	strcpy(id,itemid(obj)); /* givemonster() might free obj */
 	givemonster(m,obj);
 	print2("Given: ");
-	nprint2(itemid(obj));
+	nprint2(id);
 	morewait();
 	calc_melee();
       }
